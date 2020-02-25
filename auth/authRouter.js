@@ -5,6 +5,7 @@ const router = express.Router();
 const Users = require("../users/user-model.js")
 const bcrypt = require("bcryptjs")
 
+
 router.post('/register', (req, res) => {
     let username = req.headers.username;
     let password = req.headers.password;
@@ -12,7 +13,7 @@ router.post('/register', (req, res) => {
     if (username && password){
         const hash = bcrypt.hashSync(password, 12);
         password = hash;
-        console.log(username, password);
+        
         Users.add({username, password})
             .then(user => res.status(201).json(user))
             .catch(user => res.status(500).json({message: "Unable to save the user"}))

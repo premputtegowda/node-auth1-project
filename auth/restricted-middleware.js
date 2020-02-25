@@ -3,7 +3,8 @@ const bcrypt = require("bcryptjs");
 const Users = require("../users/user-model.js");
 
 module.exports = (req, res, next) => {
-  if (req.session && reg.loggedIn) {
+  if (req.session && req.session.loggedIn) {
+   
       next();
   } else {
     res.status(401).json({error: "need to login before you can access this app"})
