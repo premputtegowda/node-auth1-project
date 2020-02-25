@@ -20,6 +20,7 @@
   "homepage": "https://github.com/premputtegowda/node-auth1-project#readme",
   "dependencies": {
     "express": "^4.17.1",
+    "express-session": "^1.17.0",
     "knex": "^0.20.10"
   },
   "devDependencies": {
